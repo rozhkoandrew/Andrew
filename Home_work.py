@@ -91,7 +91,7 @@ c = 4596035
 ad_c = 1 + c
 ln_c = math.log(ad_c)
 division = -b**4
-division = ln_c / math.fabs(division)
+division = ln_c / division
 if division != 0:
     final = math.fabs(a) + division
 elif division == 0:
