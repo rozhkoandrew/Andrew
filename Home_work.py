@@ -4,8 +4,9 @@ a = 5
 b = 7 #Objects
 c = 3
 result_ab = a + b
-c_devisions = c / 2 # acts
-if c != 0:
+div_num =  2
+c_devisions = c / div_num # acts
+if div_num != 0:
     final_result = result_ab * c_devisions
     print(" We have 3 objects  a = %d, b = %d, c = %d. Result of a + b = %d, Result of c / 2 = %.2f"
          "    \nAnd final multiplicate = %.2f " % (a,b,c,result_ab,c_devisions,final_result )) #Final
@@ -31,8 +32,9 @@ a = 101
 b = 308 #Objects
 c = 567
 a_add_b = a+b
-division = a_add_b / 12
-if a_add_b != 0:
+div_num = 12
+division =  a_add_b / div_num
+if div_num != 0:
     c_mult = division * c # acts
     div_dif = c_mult % 4
     add_b = div_dif + b
@@ -80,7 +82,7 @@ print(' We have a= %d, b= %d, c= %d.'
       '\n Here we take cos from c - %.3f'
       '\n and here we have final result - %.3f ' % (a,b,c,a_fabs, add_ab,division,cos_c, final ))
 
-print(' Task # 5') #Task 5
+print(' Task # 6') #Task 6
 #Найти результат выражения для произвольных значений a,b,c: ( ln( 1 + c ) / -b )4+ | a |
 import math
 a = 1000000
@@ -88,16 +90,16 @@ b = 2435679
 c = 4596035
 ad_c = 1 + c
 ln_c = math.log(ad_c)
-if ln_c != 0:
-    division = -b **4
-    division = ln_c / division
+division = -b**4
+division = ln_c / math.fabs(division)
+if division != 0:
     final = math.fabs(a) + division
-elif ln_c == 0:
+elif division == 0:
     print('ZeroDivisionError')
 print (' we have a= %d, b= %d, c= %d.'
-       '\n add c and 1 - %d '
+       '\n add c and 1 = %d '
        '\n find log for this number - %.3f'
-       '\n if log not 0 , divide this on -b ecaluated on 4 = %.3f'
+       '\n if log not 0 , divide this on -b evaluated on 4 = %.3f'
        '\n  a + preveous number = %.3f' %(a,b,c, ad_c, ln_c, division,final))
 
 
