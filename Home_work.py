@@ -32,7 +32,7 @@ b = 308 #Objects
 c = 567
 a_add_b = a+b
 division = a_add_b / 12
-if division != 0:
+if a_add_b != 0:
     c_mult = division * c # acts
     div_dif = c_mult % 4
     add_b = div_dif + b
@@ -45,23 +45,74 @@ print(" Now we again have 3 objects. a= %d, b= %d, and c= %d. \nPrimirly we will
       "nubmer - %d  " % (a,b,c, a_add_b, division, c_mult, div_dif, add_b))
 
 
-print(' Task # 3') #Task 3
+print(' Task # 4') #Task 4
 # Найти результат выражения для произвольных значений a,b,c: (a - b * c ) / ( a + b ) % c
 a = 1001
-b = 4002
+b = 4002     #Objects
 c = 7800
 first_act = b * c
 first_act = first_act - a
-second_act = a + b
+second_act = a + b   # acts
 division = first_act / second_act
-if division != 0:
-    final = division % c
-elif division == 0:
-    print(" ZerroDivisioError")
+final = division % c
+print(" ZerroDivisioError")
 print(" 3 objects a= %d, b= %d, c= %d. \nFirst of all we will multiplicate b on c , and take away c"
       "we will receive - %d. \n after this we will add a to b and receise - %d "
       "\nNow divide this two objects  and receive - %2.f. "
       "\nAnd lets look for division fission residue - %d" %(a,b,c, first_act,second_act,division,final))
+
+print(' Task # 5') #Task 5
+ #Найти результат выражения для произвольных значений a,b,c: | a - b | /( a + b)3 - cos( c )
+import math
+a = 10100.
+b = 40500    #Objects
+c = 500010
+a_fabs = math.fabs(a - b)
+add_ab = a + b
+add_ab = add_ab**3    # acts
+division =  a_fabs / add_ab
+cos_c = math.cos(c)
+final = division - cos_c
+print(' We have a= %d, b= %d, c= %d.'
+      '\nHere we receive module from a - b - %d.'
+      '\nHere we add a and b, and elevate on 3 - %d '
+      '\n Here we made division on previos number - %d'
+      '\n Here we take cos from c - %.3f'
+      '\n and here we have final result - %.3f ' % (a,b,c,a_fabs, add_ab,division,cos_c, final ))
+
+print(' Task # 5') #Task 5
+#Найти результат выражения для произвольных значений a,b,c: ( ln( 1 + c ) / -b )4+ | a |
+import math
+a = 1000000
+b = 2435679
+c = 4596035
+ad_c = 1 + c
+ln_c = math.log(ad_c)
+if ln_c != 0:
+    division = -b **4
+    division = ln_c / division
+    final = math.fabs(a) + division
+elif ln_c == 0:
+    print('ZeroDivisionError')
+print (' we have a= %d, b= %d, c= %d.'
+       '\n add c and 1 - %d '
+       '\n find log for this number - %.3f'
+       '\n if log not 0 , divide this on -b ecaluated on 4 = %.3f'
+       '\n  a + preveous number = %.3f' %(a,b,c, ad_c, ln_c, division,final))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
