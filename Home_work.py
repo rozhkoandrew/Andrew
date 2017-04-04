@@ -5,13 +5,14 @@ b = 7 #Objects
 c = 3
 result_ab = a + b
 div_num =  2
-c_devisions = c / div_num # acts
 if div_num != 0:
-    final_result = result_ab * c_devisions
-    print(" We have 3 objects  a = %d, b = %d, c = %d. Result of a + b = %d, Result of c / 2 = %.2f"
-         "    \nAnd final multiplicate = %.2f " % (a,b,c,result_ab,c_devisions,final_result )) #Final
-elif c == 0:
+    c_devisions = c / div_num  # acts
+elif div_num == 0:
     print(" ZeroDevisionError")
+final_result = result_ab * c_devisions
+print(" We have 3 objects  a = %d, b = %d, c = %d. Result of a + b = %d, Result of c / 2 = %.2f"
+         "    \nAnd final multiplicate = %.2f " % (a,b,c,result_ab,c_devisions,final_result )) #Final
+
 
 print(' Task # 2') #Task 2
 # Найти результат выражения для произвольных значений a,b: (a2 + b2) % 2
@@ -33,13 +34,13 @@ b = 308 #Objects
 c = 567
 a_add_b = a+b
 div_num = 12
-division =  a_add_b / div_num
 if div_num != 0:
-    c_mult = division * c # acts
-    div_dif = c_mult % 4
-    add_b = div_dif + b
+    division =  a_add_b / div_num
 else:
     print(" ZeroDevisionError")
+c_mult = division * c # acts
+div_dif = c_mult % 4
+add_b = div_dif + b
 print(" Now we again have 3 objects. a= %d, b= %d, and c= %d. \nPrimirly we will add a and b "
       "and receive - %d, \nAfter this we will divide this number on 12 and receive - %.2f. "
       "\n now if resuld not 0 we will multiplicate  this number on c and receive - %.2f."
@@ -55,7 +56,10 @@ c = 7800
 first_act = b * c
 first_act = first_act - a
 second_act = a + b   # acts
-division = first_act / second_act
+if second_act != 0:
+    division = first_act / second_act
+else:
+    print('ZeroDevisionError')
 final = division % c
 print(" ZerroDivisioError")
 print(" 3 objects a= %d, b= %d, c= %d. \nFirst of all we will multiplicate b on c , and take away c"
@@ -87,9 +91,12 @@ print(' Task # 6') #Task 6
 import math
 a = 142
 b = -2
-c = 459
+c =  459
 d = 4
-ad_c = 1 + c
+if c != - c:
+    ad_c = 1 + c
+elif c == -c:
+    print('TypeError')
 ln_c = math.log(ad_c)
 division = b**d
 if d % 2 == 0:
