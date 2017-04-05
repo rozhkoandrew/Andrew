@@ -93,11 +93,11 @@ a = 142
 b = -2
 c =  459
 d = 4
-if c != - c:
-    ad_c = 1 + c
-elif c == -c:
-    print('TypeError')
-ln_c = math.log(ad_c)
+ad_c = 1 + c
+if ad_c > 0:
+    ln_c = math.log(ad_c)
+else:
+    ('Error')
 division = b**d
 if d % 2 == 0:
     b = 2
