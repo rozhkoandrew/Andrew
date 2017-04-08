@@ -117,6 +117,31 @@ print (' we have a= %d, b= %d, c= %d.'
 
 
 
+print(' Task # 6') #Task 6
+#Найти результат выражения для произвольных значений a,b,c: ( ln( 1 + c ) / -b )4+ | a |
+import math
+a = 4
+b =10
+c = 42
+ln = math.log(1 + c)
+if ln > 0:
+    if b != 0:
+        devision = ln/-b
+    else:
+        print("ZeroDevisionError")
+else:
+    print("Error")
+exponentiation =  devision**4
+final = math.fabs(a) + exponentiation
+print(final)
+
+
+
+
+
+
+
+
 
 
 
