@@ -89,30 +89,19 @@ print(' We have a= %d, b= %d, c= %d.'
 print(' Task # 6') #Task 6
 #Найти результат выражения для произвольных значений a,b,c: ( ln( 1 + c ) / -b )4+ | a |
 import math
-a = 142
-b = -2
-c =  459
-d = 4
-ad_c = 1 + c
-if ad_c > 0:
-    ln_c = math.log(ad_c)
+a = 4
+b =10
+c = 42
+ln = math.log(1 + c)
+if ln > 0:
+    if b != 0:
+        devision = ln/-b**4
+    else:
+        print("ZeroDevisionError")
 else:
-    ('Error')
-division = b**d
-if d % 2 == 0:
-    b = 2
-else:
-    b = -2
-division = ln_c / division
-if division != 0:
-    final = math.fabs(a) + division
-elif division == 0:
-    print('ZeroDivisionError')
-print (' we have a= %d, b= %d, c= %d.'
-       '\n add c and 1 = %d '
-       '\n find log for this number - %.2f'
-       '\n if log not 0 , divide this on -b evaluated on 4 = %.2f'
-       '\n  a + preveous number = %.3f' %(a,b,c, ad_c, ln_c, division,final))
+    print("Error")
+final = math.fabs(a) + devision
+print(final)
 
 
 
