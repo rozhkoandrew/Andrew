@@ -86,22 +86,6 @@ print(' We have a= %d, b= %d, c= %d.'
       '\n Here we take cos from c - %.3f'
       '\n and here we have final result - %.3f ' % (a,b,c,a_fabs, add_ab,division,cos_c, final ))
 
-print(' Task # 6') #Task 6
-#Найти результат выражения для произвольных значений a,b,c: ( ln( 1 + c ) / -b )4+ | a |
-import math
-a = 4
-b =10
-c = 42
-ln = math.log(1 + c)
-if ln > 0:
-    if b != 0:
-        devision = ln/-b**4
-    else:
-        print("ZeroDevisionError")
-else:
-    print("Error")
-final = math.fabs(a) + devision
-print(final)
 
 
 
