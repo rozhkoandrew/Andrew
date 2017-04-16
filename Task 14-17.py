@@ -40,6 +40,26 @@ def identify_collision(first_train_speed,second_train_speed):
         return False
 print(identify_collision(22,25))
 
+def quadratic_equation(a,b,c):
+    discr = b**2-4*a*c
+    if discr > 0:
+        x1 = (-b + math.sqrt(discr)) / (2 * a)
+        x2 = (-b - math.sqrt(discr)) / (2 * a)
+        return x1,x2
+    elif discr == 0:
+        x3 = -b / (2 * a)
+        return x3
+    else:
+        return False
+quadratic_equation = quadratic_equation(10,31,13)
+print(quadratic_equation)
+
+
+
+
+
+
+
 
 
 
