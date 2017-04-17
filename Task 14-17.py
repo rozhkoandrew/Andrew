@@ -5,11 +5,11 @@ def is_even_number(number):
 print(is_even_number(2))
 
 #first_point = [2,7]
-radius_of_first_cercle = 4
+radius_of_first_cercle = 27
 #second_point = [5,8]
 radius_of_second_cercle = 25
 #coordinates = [first_point,second_point]"""
-coordinates = [10,40,5,6]
+coordinates = [1,2,1,2]
 #def identify_crossing(x1,y1,x2,y2):
 def circles_crossing(radius_of_first_cercle,radius_of_second_cercle,*coordinates):
     distance = math.sqrt((coordinates[0]-coordinates[1])**2)+((coordinates[2]-coordinates[3])**2)
@@ -21,7 +21,8 @@ def circles_crossing(radius_of_first_cercle,radius_of_second_cercle,*coordinates
     #return is_crossing
     if delta >=0:
         return False
-    elif radius_diferrense > 0 and distance < (radius_of_second_cercle and radius_of_first_cercle):
+    #elif abs(radius_diferrense) > 0 and distance < abs(radius_of_second_cercle - radius_of_first_cercle):
+    elif  0< abs(radius_diferrense) > distance:
         return False
     else:
         return True
