@@ -11,18 +11,21 @@ radius_of_second_cercle = 25
 #coordinates = [first_point,second_point]"""
 coordinates = [10,40,5,6]
 #def identify_crossing(x1,y1,x2,y2):
-def identify_crossing(radius_of_first_cercle,radius_of_second_cercle,*coordinates):
+def circles_crossing(radius_of_first_cercle,radius_of_second_cercle,*coordinates):
     distance = math.sqrt((coordinates[0]-coordinates[1])**2)+((coordinates[2]-coordinates[3])**2)
     #distance = math.sqrt((x1-y1)**2) +((x2-y2)**2)
     #return distance
     radius_sum = radius_of_first_cercle + radius_of_second_cercle
     delta = distance - radius_sum
+    radius_diferrense = radius_of_first_cercle - radius_of_second_cercle
     #return is_crossing
     if delta >=0:
         return False
+    elif radius_diferrense > 0 and distance < (radius_of_second_cercle and radius_of_first_cercle):
+        return False
     else:
         return True
-print(identify_crossing(radius_of_first_cercle,radius_of_second_cercle,*coordinates))
+print(circles_crossing(radius_of_first_cercle,radius_of_second_cercle,*coordinates))
 
 """first_train_speed = 24
 turn_will_be = (60/ first_train_speed) * 4
