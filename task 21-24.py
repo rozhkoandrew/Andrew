@@ -1,12 +1,12 @@
 #########ПЕРВЫЙ СПОСОБ с булеоном###### ###### ###### ###### ###### ######
 def find_prime_numbers(numbers):
     for x in range(2,numbers+1):
-        a = True
+        bool_indicator = True
         for y in range(2,x):
             if x%y==0:
-                a = False
+                bool_indicator = False
                 break
-        if a == True:
+        if bool_indicator == True:
             print(x)
 find_prime_numbers(100)
 #########ВТОРОЙ СПОСОБ с подсчетом делителей###### ###### ######
@@ -31,15 +31,15 @@ find_prime_numbers(100)
 def find_prime_numbers(numbers):
     list_of_integers = []
     for x in range(2,numbers+1):
-        a = True # Задать вопрос.
+        bool_indicator = True # Задать вопрос.
         for y in range(2, int((sqrt(x))) + 1):
             if x%y==0:
-                a = False
+                bool_indicator = False
                 break
-        if a == True:
+        if bool_indicator == True:
             list_of_integers.append(x)
-    print(list_of_integers)
-find_prime_numbers(100)
+    return list_of_integers
+print(find_prime_numbers(100))
 
 
 # ############### ###### ###### ###### Второе задание ############### ###### ######
@@ -54,7 +54,7 @@ def max_value_of_random_number(number):
         if int(y) > int(max_number):
             max_number = int(y)
     print("max-number in random integer : ", max_number)
-random_number = random.randint(100000000000,900000000000)
+random_number = random.randint(int(1e11), int(1e12-1)) # e = 10**2
 max_value_of_random_number(random_number)
 
 ###### ###### Определение простого числа из рандомного и его максимальное значение.######  ######
@@ -77,8 +77,22 @@ def random_integer(number):
             if int(y) > int(max_number):
                 max_number = int(y)
         print("max-number in random integer : ", max_number)
-random_number = random.randint(100000000000,900000000000)
+random_number = random.randint(int(1e11), int(1e12-1)) #e = 10**2
 random_integer(random_number)
+
+
+####### ###### ######  5е задание ###### ###### ###### ###### ######
+
+
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
+
 
 
 import random
@@ -86,16 +100,20 @@ import random
 answer = int(random.randint(1,10))
 a = True
 while a == True:
-    choise = int(input('Guess a number from 1 to 10'))
+    choise = int(input('Guess a number from 1 to 10 '))
     if choise < answer:
-        print('Cold, ansrew should number should be bigger')
+        print('Cold, ansrew should number should be bigger ')
         a = True
     elif choise > answer:
         print('Cold, should be less')
         a = True
     elif choise == answer:
-        print("Yeah, you right. Winner, congratulations.")
+        print("Yeah, you right. Winner, congratulations. ")
         a = False
+
+
+
+
 
 
 
