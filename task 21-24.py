@@ -1,17 +1,17 @@
 #########ПЕРВЫЙ СПОСОБ с булеоном###### ###### ###### ###### ###### ######
-def is_prime(numbers):
+def find_integers(numbers):
     for x in range(2,numbers+1):
-        bool_indicator = True
+        is_prime = True
         for y in range(2,x):
             if x%y==0:
-                bool_indicator = False
+                is_prime = False
                 break
-        if bool_indicator == True:
+        if is_prime == True:
             print(x)
-is_prime(100)
+find_integers(100)
 #########ВТОРОЙ СПОСОБ с подсчетом делителей###### ###### ######
 from math import sqrt
-def is_prime(numbers):
+def find_integers(numbers):
     list_of_integers = []
     count_multipliers = 0
     for x in range(2,numbers+1):
@@ -26,20 +26,20 @@ def is_prime(numbers):
         if count_multipliers == 0 :
             list_of_integers.append(x)
     print(list_of_integers)
-is_prime(100)
+find_integers(100)
 ######### Объединение первого и второго способа #########
-def is_prime(numbers):
+def find_integers(numbers):
     list_of_integers = []
     for x in range(2,numbers+1):
-        bool_indicator = True # Задать вопрос.
+        is_prime = True # Задать вопрос.
         for y in range(2, int((sqrt(x))) + 1):
             if x%y==0:
-                bool_indicator = False
+                is_prime = False
                 break
-        if bool_indicator == True:
+        if is_prime == True:
             list_of_integers.append(x)
     return list_of_integers
-print(is_prime(100))
+print(find_integers(100))
 
 
 # ############### ###### ###### ###### Второе задание ############### ###### ######
@@ -98,18 +98,18 @@ print(factorial_by_recursion(5))
 import random
 ####### ###### ######  4е задание ###### ###### ###### ###### ######
 answer = int(random.randint(1,10))
-a = True
-while a == True:
+did_gues = False
+while did_gues  == False:
     choise = int(input('Guess a number from 1 to 10 '))
     if choise < answer:
         print('Cold, ansrew should number should be bigger ')
-        a = True
+        did_gues = False
     elif choise > answer:
         print('Cold, should be less')
-        a = True
+        did_gues = False
     elif choise == answer:
         print("Yeah, you right. Winner, congratulations. ")
-        a = False
+        did_gues = True
 
 
 
