@@ -1,5 +1,5 @@
 #########ПЕРВЫЙ СПОСОБ с булеоном###### ###### ###### ###### ###### ######
-def find_prime_numbers(numbers):
+def is_prime(numbers):
     for x in range(2,numbers+1):
         bool_indicator = True
         for y in range(2,x):
@@ -8,10 +8,10 @@ def find_prime_numbers(numbers):
                 break
         if bool_indicator == True:
             print(x)
-find_prime_numbers(100)
+is_prime(100)
 #########ВТОРОЙ СПОСОБ с подсчетом делителей###### ###### ######
 from math import sqrt
-def find_prime_numbers(numbers):
+def is_prime(numbers):
     list_of_integers = []
     count_multipliers = 0
     for x in range(2,numbers+1):
@@ -26,9 +26,9 @@ def find_prime_numbers(numbers):
         if count_multipliers == 0 :
             list_of_integers.append(x)
     print(list_of_integers)
-find_prime_numbers(100)
+is_prime(100)
 ######### Объединение первого и второго способа #########
-def find_prime_numbers(numbers):
+def is_prime(numbers):
     list_of_integers = []
     for x in range(2,numbers+1):
         bool_indicator = True # Задать вопрос.
@@ -39,7 +39,7 @@ def find_prime_numbers(numbers):
         if bool_indicator == True:
             list_of_integers.append(x)
     return list_of_integers
-print(find_prime_numbers(100))
+print(is_prime(100))
 
 
 # ############### ###### ###### ###### Второе задание ############### ###### ######
@@ -85,13 +85,13 @@ random_integer(random_number)
 
 
 
-def factorial(n):
-    if n == 0:
+def factorial_by_recursion(number):
+    if number == 0:
         return 1
     else:
-        return n * factorial(n - 1)
+        return number * factorial_by_recursion(number - 1)
 
-print(factorial(5))
+print(factorial_by_recursion(5))
 
 
 
