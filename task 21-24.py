@@ -1,4 +1,4 @@
-#########ПЕРВЫЙ СПОСОБ######### с булеоном
+#########ПЕРВЫЙ СПОСОБ с булеоном###### ###### ###### ###### ###### ######
 def find_prime_numbers(numbers):
     for x in range(2,numbers+1):
         a = True
@@ -9,7 +9,7 @@ def find_prime_numbers(numbers):
         if a == True:
             print(x)
 find_prime_numbers(100)
-#########ВТОРОЙ СПОСОБ######### с подсчетом делителей
+#########ВТОРОЙ СПОСОБ с подсчетом делителей###### ###### ######
 from math import sqrt
 def find_prime_numbers(numbers):
     list_of_integers = []
@@ -42,7 +42,7 @@ def find_prime_numbers(numbers):
 find_prime_numbers(100)
 
 
-# #########Второе задание #########
+# ############### ###### ###### ###### Второе задание ############### ###### ######
 
 import random
 
@@ -57,7 +57,7 @@ def max_value_of_random_number(number):
 random_number = random.randint(100000000000,900000000000)
 max_value_of_random_number(random_number)
 
-###### Определение простого числа из рандомного и его максимальное значение. ######
+###### ###### Определение простого числа из рандомного и его максимальное значение.######  ######
 def random_integer(number):
     max_number = 0
     count_integers = 0
@@ -80,6 +80,22 @@ def random_integer(number):
 random_number = random.randint(100000000000,900000000000)
 random_integer(random_number)
 
+
+import random
+####### ###### ######  4е задание ###### ###### ###### ###### ######
+answer = int(random.randint(1,10))
+a = True
+while a == True:
+    choise = int(input('Guess a number from 1 to 10'))
+    if choise < answer:
+        print('Cold, ansrew should number should be bigger')
+        a = True
+    elif choise > answer:
+        print('Cold, should be less')
+        a = True
+    elif choise == answer:
+        print("Yeah, you right. Winner, congratulations.")
+        a = False
 
 
 
