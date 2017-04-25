@@ -1,5 +1,5 @@
-# ПЕРВЫЙ СПОСОБ
-def find_integers(numbers):
+#########ПЕРВЫЙ СПОСОБ######### с булеоном
+def find_prime_numbers(numbers):
     for x in range(2,numbers+1):
         a = True
         for y in range(2,x):
@@ -8,11 +8,10 @@ def find_integers(numbers):
                 break
         if a == True:
             print(x)
-find_integers(100)
-
-# ВТОРОЙ СПОСОБ Более быстрый.
+find_prime_numbers(100)
+#########ВТОРОЙ СПОСОБ######### с подсчетом делителей
 from math import sqrt
-def is_integer(numbers):
+def find_prime_numbers(numbers):
     list_of_integers = []
     count_multipliers = 0
     for x in range(2,numbers+1):
@@ -27,13 +26,38 @@ def is_integer(numbers):
         if count_multipliers == 0 :
             list_of_integers.append(x)
     print(list_of_integers)
-is_integer(100)
+find_prime_numbers(100)
+######### Объединение первого и второго способа #########
+def find_prime_numbers(numbers):
+    list_of_integers = []
+    for x in range(2,numbers+1):
+        a = True # Задать вопрос.
+        for y in range(2, int((sqrt(x))) + 1):
+            if x%y==0:
+                a = False
+                break
+        if a == True:
+            list_of_integers.append(x)
+    print(list_of_integers)
+find_prime_numbers(100)
 
 
-# Второе задание
+# #########Второе задание #########
 
 import random
 
+def max_value_of_random_number(number):
+    print('Random number: ', number)
+    max_number = 0
+    number = str(number)
+    for y in number:
+        if int(y) > int(max_number):
+            max_number = int(y)
+    print("max-number in random integer : ", max_number)
+random_number = random.randint(100000000000,900000000000)
+max_value_of_random_number(random_number)
+
+###### Определение простого числа из рандомного и его максимальное значение. ######
 def random_integer(number):
     max_number = 0
     count_integers = 0
@@ -57,8 +81,8 @@ random_number = random.randint(100000000000,900000000000)
 random_integer(random_number)
 
 
-# 3е задание
-choise = int(input(''))
+
+
 
 
 
