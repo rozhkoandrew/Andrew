@@ -1,10 +1,11 @@
 ##################TASK - 25###################
 lst_of_numbers = [1,2,3,4,5,6,7,8,9,10]
 def everage_number(lst_of_numbers):
+    sum_of_numbers = 0
     for index_1,number_1 in enumerate(lst_of_numbers):
         index_1 += 1
-        number_1+=number_1
-    lst_of_numbers = number_1/index_1
+        sum_of_numbers +=number_1
+    lst_of_numbers = sum_of_numbers/index_1
     return  lst_of_numbers
 print(everage_number(lst_of_numbers))
 
@@ -81,6 +82,22 @@ else:
 
 
 ##################TASK - 30####################
+"""cripto_cod = 'йцукенгшщзхъфывапролджэячсмитьбю1234567890'
+#string_entering = input('Пожалуйста, введите имя ')
+string_entering = 'йцукен19'
+index_num_str = []
+result = []
+count_index = []
+for index , symbl in enumerate(string_entering):
+    for index_1,symbl_1 in enumerate(cripto_cod):
+        if symbl == symbl_1:
+            index_1 += 5
+            result.append(cripto_cod[index_1])
+            
+
+print('11-------',index_num_str)
+print(result)
+print(len(cripto_cod))"""
 
 
 
