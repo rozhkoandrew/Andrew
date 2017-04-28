@@ -1,13 +1,13 @@
 ##################TASK - 25###################
 lst_of_numbers = [1,2,3,4,5,6,7,8,9,10]
-def everage_number(lst_of_numbers):
+def average_number(lst_of_numbers):
     sum_of_numbers = 0
     for index,number in enumerate(lst_of_numbers):
         index += 1
         sum_of_numbers +=number
     lst_of_numbers = sum_of_numbers/index
     return  lst_of_numbers
-print(everage_number(lst_of_numbers))
+print(average_number(lst_of_numbers))
 
 ##################TASK - 26###################
 def count_odd2even(lst_of_numbers,):
@@ -32,6 +32,8 @@ for odd_nuber in range(1,100):
 print(odd_numbers)
 lst_lenth = len(odd_numbers)-1
 for index,number in enumerate(odd_numbers):
+    if number in odd_numbers:
+        break
     odd_numbers[random.randint(1,lst_lenth)] = number
 print((odd_numbers))
 
@@ -44,12 +46,11 @@ def first_or_second_lst (low_limit,upper_limit):
         second_lst.append(random.randint(low_limit, upper_limit))
     print(first_lst)
     print(second_lst)
-    print(everage_number(first_lst))
-    print(everage_number(second_lst))
-
-    if everage_number(first_lst) > everage_number(second_lst):
+    print(average_number(first_lst))
+    print(average_number(second_lst))
+    if average_number(first_lst) > average_number(second_lst):
         print('First list everage number bigger')
-    elif everage_number(first_lst)<everage_number(second_lst):
+    elif average_number(first_lst)<average_number(second_lst):
         print('Second list everage number bigger')
     else:
         print('They are quqal')
@@ -72,11 +73,11 @@ def where_is_bigger_amount_of_number(amount_of_numbers,lower_limit,upper_limit):
             minus_one += 1
         elif x == 1:
             one+=1
-    if zero > one and minus_one:
+    if zero > one and   minus_one and zero > minus_one and  one:
         print(" Most numbers in list it is 0  ")
-    elif minus_one > zero and one:
+    elif minus_one > zero and one and minus_one > one and zero:
         print(" Most numbers in list it is -1  ")
-    elif one > zero and minus_one:
+    elif one > zero and minus_one and one > minus_one and zero:
         print(" Most numbers in list it is 1  ")
 where_is_bigger_amount_of_number(12,-1,1)
 
