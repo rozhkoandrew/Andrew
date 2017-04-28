@@ -39,7 +39,7 @@ print((odd_numbers))
 def first_or_second_lst (low_limit,upper_limit):
     first_lst = []
     second_lst = []
-    for x in range(0,6):
+    for x in range(low_limit,upper_limit+1):
         first_lst.append(random.randint(low_limit,upper_limit))
         second_lst.append(random.randint(low_limit, upper_limit))
     print(first_lst)
