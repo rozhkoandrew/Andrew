@@ -2,10 +2,10 @@
 lst_of_numbers = [1,2,3,4,5,6,7,8,9,10]
 def everage_number(lst_of_numbers):
     sum_of_numbers = 0
-    for index_1,number_1 in enumerate(lst_of_numbers):
-        index_1 += 1
-        sum_of_numbers +=number_1
-    lst_of_numbers = sum_of_numbers/index_1
+    for index,number in enumerate(lst_of_numbers):
+        index += 1
+        sum_of_numbers +=number
+    lst_of_numbers = sum_of_numbers/index
     return  lst_of_numbers
 print(everage_number(lst_of_numbers))
 
@@ -36,23 +36,24 @@ for index,number in enumerate(odd_numbers):
 print((odd_numbers))
 
 ##################TASK - 28###################
-first_lst = []
-second_lst = []
-for x in range(0,6):
-    first_lst.append(random.randint(0,5))
-    second_lst.append(random.randint(0, 5))
-print(first_lst)
-print(second_lst)
-print(everage_number(first_lst))
-print(everage_number(second_lst))
-def first_or_second_lst (first_lst,second_lst):
+def first_or_second_lst (low_limit,upper_limit):
+    first_lst = []
+    second_lst = []
+    for x in range(0,6):
+        first_lst.append(random.randint(low_limit,upper_limit))
+        second_lst.append(random.randint(low_limit, upper_limit))
+    print(first_lst)
+    print(second_lst)
+    print(everage_number(first_lst))
+    print(everage_number(second_lst))
+
     if everage_number(first_lst) > everage_number(second_lst):
         print('First list everage number bigger')
     elif everage_number(first_lst)<everage_number(second_lst):
         print('Second list everage number bigger')
     else:
         print('They are quqal')
-first_or_second_lst(first_lst,second_lst)
+first_or_second_lst(0,5)
 
 ##################TASK - 29###################
 
@@ -77,8 +78,6 @@ elif minus_one > zero and one:
     print(" Most numbers in list it is -1  ")
 elif one > zero and minus_one:
     print(" Most numbers in list it is 1  ")
-else:
-    pass
 
 
 ##################TASK - 30####################
