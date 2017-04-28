@@ -56,28 +56,29 @@ def first_or_second_lst (low_limit,upper_limit):
 first_or_second_lst(0,5)
 
 ##################TASK - 29###################
-
-lst = []
-for x in range(1,12):
-    lst.append(random.randint(-1,1))
-print(len(lst))
-print(lst)
-zero = 0
-minus_one = 0
-one = 0
-for x in lst:
-    if x == 0:
-        zero += 1
-    elif x == -1:
-        minus_one += 1
-    elif x == 1:
-        one+=1
-if zero > minus_one  and one:
-    print(" Most numbers in list it is 0  ")
-elif minus_one > zero and one:
-    print(" Most numbers in list it is -1  ")
-elif one > zero and minus_one:
-    print(" Most numbers in list it is 1  ")
+def where_is_bigger_amount_of_number(amount_of_numbers,lower_limit,upper_limit):
+    lst = []
+    for x in range(1,amount_of_numbers):
+        lst.append(random.randint(lower_limit,upper_limit))
+    print(len(lst))
+    print(lst)
+    zero = 0
+    minus_one = 0
+    one = 0
+    for x in lst:
+        if x == 0:
+            zero += 1
+        elif x == -1:
+            minus_one += 1
+        elif x == 1:
+            one+=1
+    if zero > one and minus_one:
+        print(" Most numbers in list it is 0  ")
+    elif minus_one > zero and one:
+        print(" Most numbers in list it is -1  ")
+    elif one > zero and minus_one:
+        print(" Most numbers in list it is 1  ")
+where_is_bigger_amount_of_number(12,-1,1)
 
 
 ##################TASK - 30####################
