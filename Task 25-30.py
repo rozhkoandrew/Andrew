@@ -73,17 +73,17 @@ def where_is_bigger_amount_of_number(amount_of_numbers,lower_limit,upper_limit):
             minus_one += 1
         elif x == 1:
             one+=1
-    if zero > one and   minus_one and zero > minus_one and  one:
+    if zero > one and  zero >  minus_one :
         print(" Most numbers in list it is 0  ")
-    elif minus_one > zero and one and minus_one > one and zero:
+    if minus_one > zero and minus_one >one :
         print(" Most numbers in list it is -1  ")
-    elif one > zero and minus_one and one > minus_one and zero:
+    if one > zero and  one > minus_one :
         print(" Most numbers in list it is 1  ")
 where_is_bigger_amount_of_number(12,-1,1)
 
 
 ##################TASK - 30####################
-"""cripto_cod = 'йцукенгшщзхъфывапролджэячсмитьбю1234567890'
+cripto_cod = 'йцукенгшщзхъфывапролджэячсмитьбю1234567890'
 #string_entering = input('Пожалуйста, введите имя ')
 string_entering = 'йцукен19'
 index_num_str = []
@@ -93,12 +93,16 @@ for index , symbl in enumerate(string_entering):
     for index_1,symbl_1 in enumerate(cripto_cod):
         if symbl == symbl_1:
             index_1 += 5
-            result.append(cripto_cod[index_1])
+            result.append(index_1)
+
+print(string_entering)
+
+
             
 
 print('11-------',index_num_str)
-print(result)
-print(len(cripto_cod))"""
+print('res ====' ,result)
+print(len(cripto_cod))
 
 
 
