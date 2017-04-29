@@ -24,7 +24,27 @@ def count_odd2even(lst_of_numbers,):
 print(count_odd2even(lst_of_numbers))
 
 ##################TASK - 27###################
+
 import random
+odd_numbers = []
+cheking = 0
+for odd_nuber in range(1,100):
+    if odd_nuber % 2 != 0:
+        odd_numbers.append(odd_nuber)
+print(odd_numbers)
+lst_lenth = len(odd_numbers)-1
+a = random.randint(1,lst_lenth)
+for index,number in enumerate(odd_numbers):
+    print(index,number)
+
+
+print((odd_numbers))
+
+
+
+
+
+"""import random
 odd_numbers = []
 for odd_nuber in range(1,100):
     if odd_nuber % 2 != 0:
@@ -32,10 +52,8 @@ for odd_nuber in range(1,100):
 print(odd_numbers)
 lst_lenth = len(odd_numbers)-1
 for index,number in enumerate(odd_numbers):
-    if number in odd_numbers:
-        break
     odd_numbers[random.randint(1,lst_lenth)] = number
-print((odd_numbers))
+print((odd_numbers))"""
 
 ##################TASK - 28###################
 def first_or_second_lst (low_limit,upper_limit):
@@ -83,26 +101,33 @@ where_is_bigger_amount_of_number(12,-1,1)
 
 
 ##################TASK - 30####################
-cripto_cod = 'йцукенгшщзхъфывапролджэячсмитьбю1234567890'
-#string_entering = input('Пожалуйста, введите имя ')
-string_entering = 'йцукен19'
-index_num_str = []
-result = []
-count_index = []
-for index , symbl in enumerate(string_entering):
-    for index_1,symbl_1 in enumerate(cripto_cod):
-        if symbl == symbl_1:
-            index_1 += 5
-            result.append(index_1)
+string_entering = input('Введите имя в нижнем регистре на русском языкеан: ')
+def cripto_cod(string):
+    cripto_cod = 'йцукенгшщзхъфыва-пролджэячсмитьбю1234567890'
+    #string_entering = input('Пожалуйста, введите имя ')
+    #string_entering = 'йцукен09'
+    index_num_str = []
+    result = []
+    final = ''
+    #index_distance = len(cripto_cod) - index_1
+    for index , symbl in enumerate(string_entering):
+        for index_1,symbl_1 in enumerate(cripto_cod):
+            if symbl == symbl_1:
+                index_1 += 5
+                if index_1 > len(cripto_cod):
+                    #index_1 = 0
+                    index_1 -= len(cripto_cod)
+                result.append(index_1)
+                count_index = index_1
+                final += cripto_cod[count_index]
+    print('Ваше Имя в зашифрованном виде : ', final)
 
-print(string_entering)
+
+cripto_cod(string_entering)
 
 
-            
 
-print('11-------',index_num_str)
-print('res ====' ,result)
-print(len(cripto_cod))
+
 
 
 
