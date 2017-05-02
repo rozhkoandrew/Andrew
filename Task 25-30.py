@@ -1,3 +1,4 @@
+import random
 ##################TASK - 25###################
 lst_of_numbers = [1,2,3,4,5,6,7,8,9,10]
 def average_number(lst_of_numbers):
@@ -24,36 +25,22 @@ def count_odd2even(lst_of_numbers,):
 print(count_odd2even(lst_of_numbers))
 
 ##################TASK - 27###################
+def random_index_in_list_of_oddnumbers(amount_of_numbers):
+    import random
+    odd_numbers = []
+    for odd_nuber in range(1,amount_of_numbers):
+        if odd_nuber % 2 != 0:
+            odd_numbers.append(odd_nuber)
+    print(odd_numbers)
+    for odd_number in range(0,len(odd_numbers)-1):
+        random_n = random.randint(odd_number + 1 , len(odd_numbers)-1)
+        x = odd_numbers[odd_number]
+        odd_numbers[odd_number ] = odd_numbers[random_n]
+        odd_numbers[random_n] = x
+    return odd_numbers
 
-import random
-odd_numbers = []
-cheking = 0
-for odd_nuber in range(1,100):
-    if odd_nuber % 2 != 0:
-        odd_numbers.append(odd_nuber)
-print(odd_numbers)
-lst_lenth = len(odd_numbers)-1
-a = random.randint(1,lst_lenth)
-for index,number in enumerate(odd_numbers):
-    print(index,number)
+print(random_index_in_list_of_oddnumbers(100))
 
-
-print((odd_numbers))
-
-
-
-
-
-"""import random
-odd_numbers = []
-for odd_nuber in range(1,100):
-    if odd_nuber % 2 != 0:
-        odd_numbers.append(odd_nuber)
-print(odd_numbers)
-lst_lenth = len(odd_numbers)-1
-for index,number in enumerate(odd_numbers):
-    odd_numbers[random.randint(1,lst_lenth)] = number
-print((odd_numbers))"""
 
 ##################TASK - 28###################
 def first_or_second_lst (low_limit,upper_limit):
@@ -101,7 +88,7 @@ where_is_bigger_amount_of_number(12,-1,1)
 
 
 ##################TASK - 30####################
-string_entering = input('Введите имя в нижнем регистре на русском языкеан: ')
+"""string_entering = input('Введите имя в нижнем регистре на русском языкеан: ')
 def cripto_cod(string):
     cripto_cod = 'йцукенгшщзхъфыва-пролджэячсмитьбю1234567890'
     #string_entering = input('Пожалуйста, введите имя ')
@@ -123,7 +110,7 @@ def cripto_cod(string):
     print('Ваше Имя в зашифрованном виде : ', final)
 
 
-cripto_cod(string_entering)
+cripto_cod(string_entering)"""
 
 
 
