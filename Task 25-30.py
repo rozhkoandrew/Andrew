@@ -32,10 +32,10 @@ def random_index_in_list_of_oddnumbers(amount_of_numbers):
         if odd_nuber % 2 != 0:
             odd_numbers.append(odd_nuber)
     print(odd_numbers)
-    for odd_number in range(0,len(odd_numbers)-1):
-        random_n = random.randint(odd_number + 1 , len(odd_numbers)-1)
-        x = odd_numbers[odd_number]
-        odd_numbers[odd_number ] = odd_numbers[random_n]
+    for index in range(0,len(odd_numbers)-1):
+        random_n = random.randint(index + 1 , len(odd_numbers)-1)
+        x = odd_numbers[index]
+        odd_numbers[index ] = odd_numbers[random_n]
         odd_numbers[random_n] = x
     return odd_numbers
 
