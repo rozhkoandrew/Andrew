@@ -1,3 +1,5 @@
+amount_of_symbls = int(input('Сколько букв вы хотите видеть в вашем пароле? :'))
+amount_of_numbers = int(input('Сколько цифр вы хотите видеть в вашем пароле? :'))
 import unittest
 def create_password(request_amount_symbl,request_amount_numbers):
     import random
@@ -15,13 +17,13 @@ def create_password(request_amount_symbl,request_amount_numbers):
     random.shuffle(random_symbl)
     password_string = ''.join(random_symbl)
     return password_string
-print(create_password(6,2))
+print(create_password(amount_of_symbls,amount_of_numbers))
 
 
 class TestAmountOfSymbls(unittest.TestCase):
     def test_amount_of_symbl(self):
-        enter_amount_of_s_and_n = create_password(6,2)
-        self.assertEqual(len(enter_amount_of_s_and_n),8)
+        enter_amount_of_s_and_n = create_password(amount_of_symbls,amount_of_numbers)
+        self.assertEqual(len(enter_amount_of_s_and_n),amount_of_numbers + amount_of_symbls)
 if __name__ =='__main__':
     unittest.main()
 
