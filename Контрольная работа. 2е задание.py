@@ -7,6 +7,14 @@ def sum_odd_numbers(number):
         if int(string[x])% 2 !=0:
             list_of_odd_numbers.append(int(string[x]))
     return sum(list_of_odd_numbers)
+
+class TestIsReturnSummOfOddNumbers(unittest.TestCase):
+    def test_is_return_sumOfodd(self):
+        result = sum_odd_numbers(12345)
+        self.assertEqual(result,9)
+
+
+
 def which_number_is_closer_to_10(number_1,number_2):
     import math
     checking_1 =  math.fabs(number_1- 10)
@@ -17,6 +25,18 @@ def which_number_is_closer_to_10(number_1,number_2):
         return number_2
     else:
         return None
+
+class TestDistanseTo10(unittest.TestCase):
+    def test_where_less_distanse(self):
+        less_distance = which_number_is_closer_to_10(9.1, 11)
+        self.assertEqual(less_distance, 9.1)
+
+    def test_if_equal_distance(self):
+        equal_distance_number = which_number_is_closer_to_10(9.1, 10.9)
+        self.assertEqual(equal_distance_number, None)
+
+
+
 def find_integers(numbers):
     integers = []
     for x in range(2,numbers+1):
@@ -35,17 +55,7 @@ def fill_lst_with_random_integers(numbers):
         numbers[x] = find_integers(100)[random_index]
         find_integers(100)[random_index] = y
     return numbers
-class TestIsReturnSummOfOddNumbers(unittest.TestCase):
-    def test_is_return_sumOfodd(self):
-        result = sum_odd_numbers(12345)
-        self.assertEqual(result,9)
-class TestDistanseTo10(unittest.TestCase):
-    def test_where_less_distanse(self):
-        less_distance = which_number_is_closer_to_10(9.1,11)
-        self.assertEqual(less_distance,9.1)
-    def test_if_equal_distance(self):
-        equal_distance_number = which_number_is_closer_to_10(9.1,10.9)
-        self.assertEqual(equal_distance_number,None)
+
 class TestIsInteger(unittest.TestCase):
     def test_is_integers_inside(self):
         list_1 = fill_lst_with_random_integers(lst)
@@ -59,6 +69,8 @@ class TestIsInteger(unittest.TestCase):
             if is_prime == True:
                 deviders.append(x)
         self.assertEqual(len(lst),len(deviders))
+
+
 if __name__=='__main__':
     enter_number = int(input('Введите число'))
     print(sum_odd_numbers(enter_number))
