@@ -33,7 +33,7 @@ class TestDistanseTo10(unittest.TestCase):
 
 
 def find_primes(numbers):
-    integers = []
+    primes = []
     for x in range(2,numbers+1):
         is_prime = True
         for y in range(2,x):
@@ -41,19 +41,23 @@ def find_primes(numbers):
                 is_prime = False
                 break
         if is_prime == True:
-            integers.append(x)
-    random.shuffle(integers)
-    return integers
+            primes.append(x)
+    random.shuffle(primes)
+    return primes
+list_of_primes = find_primes(100)
 def fill_lst_with_random_integers(numbers):
     for x in range(0, len(numbers)):
-        numbers[x] = find_primes(100)[x]
+        numbers[x] = list_of_primes[x]
     return numbers
 class TestIsInteger(unittest.TestCase):
     def test_is_integers_inside(self):
         list_1 = fill_lst_with_random_integers(lst)
         deviders = []
         for x in list_1:
-            deviders.append(find_primes(x))
+            if x in list_of_primes:
+                deviders.append(x)
+            else:
+                break
         self.assertEqual(len(lst),len(deviders))
 
 
@@ -64,7 +68,6 @@ if __name__=='__main__':
     first_number = float(input('Введите первое число: '))
     second_number = float(input('Введите второе числ: '))
     print(which_number_is_closer_to_10(first_number, second_number))
-    find_primes(100)
     lst = [12, 14.6, 'vdvd', True, 23, [2,4,5], 7, 3, 9, 10]
     print(fill_lst_with_random_integers(lst))
     unittest.main()
