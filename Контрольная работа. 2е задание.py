@@ -44,14 +44,15 @@ def find_primes(numbers):
             primes.append(x)
     random.shuffle(primes)
     return primes
-list_of_primes = find_primes(100)
-def fill_lst_with_random_integers(numbers):
-    for x in range(0, len(numbers)):
-        numbers[x] = list_of_primes[x]
-    return numbers
+def fill_lst_with_random_integers(list,limit_number):
+    list_of_primes = find_primes(limit_number)
+    for x in range(0, len(list)):
+        list[x] = list_of_primes[x]
+    return list
 class TestIsInteger(unittest.TestCase):
     def test_is_integers_inside(self):
-        list_1 = fill_lst_with_random_integers(lst)
+        list_1 = fill_lst_with_random_integers(lst,100)
+        list_of_primes = find_primes(100)
         deviders = []
         for x in list_1:
             if x in list_of_primes:
@@ -69,7 +70,7 @@ if __name__=='__main__':
     second_number = float(input('Введите второе числ: '))
     print(which_number_is_closer_to_10(first_number, second_number))
     lst = [12, 14.6, 'vdvd', True, 23, [2,4,5], 7, 3, 9, 10]
-    print(fill_lst_with_random_integers(lst))
+    print(fill_lst_with_random_integers(lst,100))
     unittest.main()
 
 """ import unittest
