@@ -31,12 +31,12 @@ class TestDistanseTo10(unittest.TestCase):
 
 
 def is_prime(num):
-    bool_int = True
+    find_prime = True
     for x in range(2,num):
         if num%x==0:
-            bool_int = False
+            find_prime = False
             break
-    if bool_int == True:
+    if find_prime == True:
         return num
 def find_primes(numbers):
     primes = []
