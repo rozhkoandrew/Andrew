@@ -52,7 +52,7 @@ class TestIsNormilizeTo1(unittest.TestCase):
 if __name__ == "__main__":
     print(find_sum_fibonachi_list(10))
     print(change_max_and_min(create_fibinachi_lst(10)))
-    print(normalize_lst([x for x in range(-5, 6)]))
+    print(normalize_lst([x for x in range(-6, 7)]))
     unittest.main()
 
 
