@@ -30,32 +30,32 @@ class TestDistanseTo10(unittest.TestCase):
         self.assertEqual(less_distance, 9.1)
 
 
-
-
+def is_prime(num):
+    bool_int = True
+    for x in range(2,num):
+        if num%x==0:
+            bool_int = False
+            break
+    if bool_int == True:
+        return num
 def find_primes(numbers):
     primes = []
-    for x in range(2,numbers+1):
-        is_prime = True
-        for y in range(2,x):
-            if x%y==0:
-                is_prime = False
-                break
-        if is_prime == True:
+    for x in range(1,numbers+1):
+        if is_prime(x):
             primes.append(x)
-    random.shuffle(primes)
     return primes
+
 def fill_lst_with_random_integers(list,limit_number):
     list_of_primes = find_primes(limit_number)
+    random.shuffle(list_of_primes)
     for x in range(0, len(list)):
         list[x] = list_of_primes[x]
     return list
 class TestIsInteger(unittest.TestCase):
     def test_is_integers_inside(self):
-        list_1 = fill_lst_with_random_integers(lst,100)
-        list_of_primes = find_primes(100)
         deviders = []
-        for x in list_1:
-            if x in list_of_primes:
+        for x in fill_lst_with_random_integers(lst,100):
+            if is_prime(x):
                 deviders.append(x)
             else:
                 break
@@ -73,7 +73,10 @@ if __name__=='__main__':
     print(fill_lst_with_random_integers(lst,100))
     unittest.main()
 
-""" import unittest
+
+    """
+
+import unittest
 import random
 
 
@@ -168,8 +171,8 @@ if __name__ == '__main__':
     find_integers(100)
     lst = [12, 14.6, 'vdvd', True, 23, [2, 4, 5], 7, 3, 9, 10]
     print(fill_lst_with_random_integers(lst))
-    unittest.main()
-"""
+    unittest.main()"""
+
 
 
 
