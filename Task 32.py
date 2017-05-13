@@ -63,14 +63,14 @@ def find_entry_age_phonebook(age):
     if not found:
         printError('Not Found!!!')
 def delete_entry_name_phonebook(name):
-    idx = 1
+    idx = 0
     found = False
     for entry in phone_book:
-        if entry['name'] == name:
-            del entry['name']
-            print('Deleted!!')
-            idx +=1
+        if name in entry['name']:
+            del phone_book[idx]
             found = True
+        else:
+            idx += 1
     if not found:
         printError('Not Found!!!')
 
@@ -160,19 +160,19 @@ def main():
                 count_all_entries_in_phonebook()
             elif choice == 8:
                 print_avr_age()
+            elif choice == 9:
+                numbrs_of_years = int(input((" Enter number of years to add to current ages: ")))
+                increase_age(numbrs_of_years)
             elif choice == 10:
                 name = str(input(' Enter name'))
                 number_of_years = int(input(' Enter number of years to add to current ages:'))
-                increase_age_by_entry(name,number_of_years)
-            elif choice == 9:
-                numbrs_of_years = int(input(("Enter number of years to add to current ages: ")))
-                increase_age(numbrs_of_years)
+                increase_age_by_entry(name, number_of_years)
             elif choice == 0:
                 print ("Bye!")
                 break
 
             else:
-                print ("Enter action within range [0..9]")
+                print ("Enter action within range [0..10]")
 
         except ValueError:
             if str(user_input) == 's':
