@@ -30,14 +30,10 @@ class TestisChangeMaxandMin(unittest.TestCase):
         min_value_index = lst.index(min(lst))
         self.assertTrue(max_value_index == 0)
         self.assertTrue(min_value_index == 9)
+
 def normalize_lst(lst):
-    max_value = 0
-    persent_list = []
-    for x in range(0,len(lst)):
-        if abs(lst[x]) > max_value:
-            max_value = abs(lst[x])
-    for x in range(0, len(lst)):
-        persent_list.append(lst[x]/max_value)
+    abs_max = max([abs(x) for x in lst])
+    persent_list = [lst[x] / abs_max for x in range(0, len(lst))]
     return persent_list
 class TestIsNormilizeTo1(unittest.TestCase):
     def test_is_normilize_to_1(self):
