@@ -24,5 +24,6 @@ def take_numbers_from_list(first_lst,second_lst):
         x+=1
     return lst_1
 print(take_numbers_from_list(first_lst,second_lst))
+#
 
 
