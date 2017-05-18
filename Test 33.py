@@ -11,7 +11,7 @@ def get_tests_results():
     json_object = response.json()
     return json_object
 
-def get_weightS():
+def get_weights():
     response = requests.get(URL + '/test1_weights/')
     print(response)
     json_object = response.json()
@@ -51,7 +51,7 @@ def count_and_update_students():
     group = get_all_students()
     hw_results = get_hw_results()
     test1_results = get_tests_results()
-    lst_of_weight = get_weightS()
+    lst_of_weight = get_weights()
     rank = 0
     for elem in group:
         lst_of_hm = []
@@ -73,14 +73,14 @@ def count_and_update_students():
 def print_students_info(dict, sorted_by,reverse):
     group = get_all_students()
     for elem in sorted(group, key=lambda value: value.get(sorted_by),reverse=reverse):
-         print("-----------------------------------------"
-                                ": ID: %d:"
-                               " :.......................................:"
-                               " : Full"
+         print("-----------------------------------------\n"
+                                ": ID: %d:\n"
+                               ":.......................................:"
+                               " \n: Full"
                                 "name: %s"
-                                ": Email: %s"
-                                ": Github: %s"
-                                ": Rank: %d:"
+                                ": \nEmail: %s"
+                                ": Github: %s\n"
+                                ": Rank: %d\n:"
             " -----------------------------------------"%(
              elem['id'],elem['fullname'],elem['email'],elem['github'],elem['rank']))
 
@@ -91,6 +91,6 @@ if __name__ =='__main__':
     count_and_update_students()
     #print(get_hw_results())
     #print(get_tests_results())
-    #print(get_weightS())
+    #print(get_weights())
     print_students_info(get_all_students,'rank',True)
     #update_student(1030,'rank',2906)
