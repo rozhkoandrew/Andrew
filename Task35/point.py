@@ -1,8 +1,9 @@
+import math
 class Point:
-    def __init__(self,x,y):
-        self.x = x
-        self.y = y
-        self.coordinates = (self.x - self.y) ** 2
+    def __init__(self,cordinate):
+        self.cordinate = cordinate
+
+        
 
 
 
