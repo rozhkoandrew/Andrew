@@ -25,8 +25,11 @@ def print_phonebook():
         number += 1
 
 def print_phonebook_by_age():
-    for entry in sorted(phone_book,key=lambda age : age['age']):
-        print(entry)
+    phone_book.sort(key=lambda entry: entry.get("age"))
+    idx = 0
+    for entry in phone_book:
+        idx += 1
+        print_entry(idx, entry)
 
 def add_entry_phonebook(surname, name, age):
     entry = {}
