@@ -8,4 +8,5 @@ if __name__=='__main__':
     train_1.add_carriage_or_reduce(-2)
     train_1.print_info()
     airplane_1 = airplane.Airplane('Boing-747',40,12,200,300)
+    airplane_1.is_free_meal_this_voyage(True)
     airplane_1.print_info()
