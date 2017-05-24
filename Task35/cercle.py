@@ -1,9 +1,9 @@
 import point
 import math
-class Cercle(point.Point):
-    def __init__(self,x,y,radius):
-        point.Point.__init__(self,x,y)
+class Cercle:
+    def __init__(self,point,radius):
         self.radius = radius
+        self.point = point
 
     def is_inside(self,x1,y1,x2,y2,radius):
         distance = abs(math.sqrt((x1-x2)**2)+((y1-y2)**2))
