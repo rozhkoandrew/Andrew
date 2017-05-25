@@ -8,8 +8,8 @@ class Airplane(vehicle.Vehicle):
 
 
 
-    def is_free_meal_this_voyage(self,true_of_false):
-        self.free_meal = true_of_false
+    def include_free_meal(self, free_meal):
+        self.free_meal = free_meal
 
 
     def print_info(self):
