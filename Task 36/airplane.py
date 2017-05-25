@@ -1,7 +1,7 @@
 import vehicle
 class Airplane(vehicle.Vehicle):
     def __init__(self,model,lenght,widght,capacity,speed,free_meal = False):
-        vehicle.Vehicle.__init__(self,model, lenght, widght, speed)
+        super().__init__(model, lenght, widght, speed)
         self.capacity = capacity
         self.bagage_capacity = capacity * 2
         self.free_meal = free_meal

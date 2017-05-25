@@ -1,7 +1,7 @@
 import vehicle
 class Train(vehicle.Vehicle):
     def __init__(self,model,lenght,widght,speed,carriage_n,):
-        vehicle.Vehicle.__init__(self,model,lenght,widght,speed)
+        super().__init__(model,lenght,widght,speed)
         self.carriage_n = carriage_n
         self.capacity = self.carriage_n * 30
         self.speed = self.speed - self.carriage_n
